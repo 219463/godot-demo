@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
 #4.0后，velocity在2D中被定义，无需重复定义
-const MAX_SPEED = 100
+const MAX_SPEED = 200
+#加速度
+const ACCELEARTION = 25
+#摩擦力
+const FRNCTION = 25
 
 func _ready():
 	print("start")
@@ -14,11 +18,14 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
-		velocity = input_vector * MAX_SPEED
+		velocity += input_vector * ACCELEARTION * delta
+		velocity = velocity.limit_length(MAX_SPEED * delta)
 		print(velocity)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO , 5)
+		#move_toward : 目标速度，每秒变化
+		velocity = velocity.move_toward(Vector2.ZERO , FRNCTION*delta)
 		
 	#传递速度
-	move_and_collide(velocity * delta)
+	move_and_collide(velocity)
+	
 	
