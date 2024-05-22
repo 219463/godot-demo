@@ -22,7 +22,6 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO , FRNCTION*delta)
 		
-		
 	#传递速度
 	move_and_slide()
 	
