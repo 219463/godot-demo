@@ -1,14 +1,11 @@
 extends CharacterBody2D
 
 #4.0后，velocity在2D中被定义，无需重复定义
-const MAX_SPEED = 5
-#加速度
-const ACCELEARTION = 20
+const MAX_SPEED = 150
+#加速度 时间单位是 秒
+const ACCELEARTION = 1500
 #摩擦力
-const FRNCTION = 50
-
-func _ready():
-	print("start")
+const FRNCTION = 5000
 #delta是上一帧的运行时间
 func _physics_process(delta):
 	#vector 方向向量 包含了x,y的单位量
@@ -25,8 +22,8 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO , FRNCTION*delta)
 		
+		
 	#传递速度
-	move_and_collide(velocity)
-	print(velocity)
+	move_and_slide()
 	
 	
