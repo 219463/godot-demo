@@ -22,12 +22,15 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		#相当于设定动画树的方向，只有在有方向时加载，能避免无方向时在（0，0）默认方向
 		animationTree.set("parameters/Idle/blend_position",input_vector)
 		animationTree.set("parameters/Run/blend_position",input_vector)
+		#执行Run动画
 		animationState.travel("Run")
 		#move_toward : 目标速度向量，每秒变化，摩擦力的加速度
 		velocity = velocity.move_toward(input_vector*MAX_SPEED , ACCELEARTION*delta)
 	else:
+		#执行Idle动画
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO , FRNCTION*delta)
 		
