@@ -6,6 +6,11 @@ const MAX_SPEED = 150
 const ACCELEARTION = 1500
 #摩擦力
 const FRNCTION = 5000
+
+@onready var animationPlayer = $AnimationPlayer
+@onready var animationTree = $AnimationTree
+@onready var animationState = animationTree.get("parameters/playback")
+
 #delta是上一帧的运行时间
 func _physics_process(delta):
 	#vector 方向向量 包含了x,y的单位量
@@ -17,9 +22,13 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		animationTree.set("parameters/Idle/blend_position",input_vector)
+		animationTree.set("parameters/Run/blend_position",input_vector)
+		animationState.travel("Run")
 		#move_toward : 目标速度向量，每秒变化，摩擦力的加速度
 		velocity = velocity.move_toward(input_vector*MAX_SPEED , ACCELEARTION*delta)
 	else:
+		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO , FRNCTION*delta)
 		
 	#传递速度

@@ -187,13 +187,11 @@ resource_local_to_scene = true
 blend_point_0/node = SubResource("AnimationNodeAnimation_lwuw4")
 blend_point_0/pos = Vector2(-1, 0)
 blend_point_1/node = SubResource("AnimationNodeAnimation_262on")
-blend_point_1/pos = Vector2(0, 1.1)
+blend_point_1/pos = Vector2(0, 1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_q3vxt")
-blend_point_2/pos = Vector2(0, -1.1)
+blend_point_2/pos = Vector2(0, -1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_v7tl6")
 blend_point_3/pos = Vector2(1, 0)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p3lcq"]
@@ -212,13 +210,11 @@ animation = &"RunRight"
 blend_point_0/node = SubResource("AnimationNodeAnimation_p3lcq")
 blend_point_0/pos = Vector2(-1, 0)
 blend_point_1/node = SubResource("AnimationNodeAnimation_3461i")
-blend_point_1/pos = Vector2(0, 1.1)
+blend_point_1/pos = Vector2(0, 1)
 blend_point_2/node = SubResource("AnimationNodeAnimation_1hnth")
-blend_point_2/pos = Vector2(0, -1.1)
+blend_point_2/pos = Vector2(0, -1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_4jlfd")
 blend_point_3/pos = Vector2(1, 0)
-min_space = Vector2(-1, -1.1)
-max_space = Vector2(1, 1.1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sax42"]

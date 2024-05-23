@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://htqhm7ejuawi" path="res://World/Bush.tscn" id="2_q61pu"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_f633l")]
 position = Vector2(112, 72)
