@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bored7dpcwedm"]
+
+[node name="Hitbox" type="Area2D"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c41ycptieb058"]
+
+[ext_resource type="Script" path="res://World/Grass.gd" id="1_4755t"]
+[ext_resource type="Texture2D" uid="uid://cyv2q11cau404" path="res://World/Grass.png" id="1_t10mo"]
+
+[node name="Grass" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_4755t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t10mo")
+centered = false
+offset = Vector2(-8, -8)
