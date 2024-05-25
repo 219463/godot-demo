@@ -1,7 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://cy6x06h8348v1"]
+[gd_scene load_steps=41 format=3 uid="uid://cy6x06h8348v1"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_rlc8w"]
 [ext_resource type="Texture2D" uid="uid://ckctcqj7rss3l" path="res://Player/Player.png" id="2_dqk6l"]
+[ext_resource type="PackedScene" uid="uid://bored7dpcwedm" path="res://Hitboxes and Hurtboxes/Hitbox.tscn" id="3_q33lv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wobpa"]
 radius = 4.0
@@ -36,6 +37,30 @@ tracks/1/keys = {
 "method": &"attack_animation_finished"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FitboxPivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_0syfj"]
 resource_name = "AttackLeft"
@@ -65,6 +90,30 @@ tracks/1/keys = {
 "args": [],
 "method": &"attack_animation_finished"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FitboxPivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.14159]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_6n3cp"]
@@ -96,6 +145,30 @@ tracks/1/keys = {
 "method": &"attack_animation_finished"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FitboxPivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_qy8sh"]
 resource_name = "AttackUp"
@@ -125,6 +198,30 @@ tracks/1/keys = {
 "args": [],
 "method": &"attack_animation_finished"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FitboxPivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.71239]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_c46wd"]
@@ -207,6 +304,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FitboxPivot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FitboxPivot/Hitbox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_rthsi"]
@@ -375,7 +496,6 @@ blend_mode = 1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q6meq"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rvvou"]
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8idfv"]
 
@@ -391,7 +511,12 @@ states/Run/position = Vector2(426, 181.216)
 states/Start/position = Vector2(242.889, 68.0003)
 transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_sax42"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_q6meq"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_rvvou"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_8idfv"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_aiiyc")]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vfxge"]
+radius = 9.0
+height = 24.0
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_rlc8w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -406,6 +531,7 @@ rotation = -1.5708
 shape = SubResource("CapsuleShape2D_wobpa")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_gl4x5")
 }
@@ -413,6 +539,22 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_ds6dm")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Attack/blend_position = Vector2(-0.0411449, 0.149383)
-parameters/Idle/blend_position = Vector2(0.0936196, 0.237654)
-parameters/Run/blend_position = Vector2(0.0471079, -0.774074)
+parameters/Attack/blend_position = Vector2(0.00298154, 0.0215685)
+parameters/Idle/blend_position = Vector2(0.0435301, 0.0143791)
+parameters/Run/blend_position = Vector2(-0.0399523, -0.0287582)
+
+[node name="FitboxPivot" type="Marker2D" parent="."]
+position = Vector2(0, -8)
+rotation = 1.5708
+
+[node name="Hitbox" parent="FitboxPivot" instance=ExtResource("3_q33lv")]
+position = Vector2(0, 4)
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" parent="FitboxPivot/Hitbox" index="0"]
+position = Vector2(16, -4)
+shape = SubResource("CapsuleShape2D_vfxge")
+disabled = true
+
+[editable path="FitboxPivot/Hitbox"]

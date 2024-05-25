@@ -888,7 +888,6 @@ layer_0/tile_data = PackedInt32Array(196612, 0, 0, 196613, 65536, 0, 196614, 131
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_624hd")
-collision_animatable = true
 format = 2
 layer_0/tile_data = PackedInt32Array(131079, 131072, 0, 196615, 131072, 2, 262153, 0, 1, 327689, 589824, 1, 327688, 0, 0, 393224, 0, 2, 393225, 131072, 2, 327690, 131072, 2, 262154, 131072, 1, 196618, 131072, 1, 131082, 131072, 1, 65546, 131072, 1, 10, 131072, 1, 9, 393216, 1, -65527, 65536, 0, -65526, 131072, 0, 65542, 196608, 0, 131078, 262144, 2, 196614, 0, 2, 262148, 0, 0, 262149, 131072, 0, 327685, 131072, 1, 393221, 131072, 2, 393220, 0, 2, 327684, 0, 1, 65545, 0, 1, 131081, 0, 1, 196617, 0, 1, 8, 0, 2, -65528, 0, 0)
 
@@ -903,6 +902,8 @@ y_sort_enabled = true
 
 [node name="Bush" parent="YSort/Bushes" instance=ExtResource("2_q61pu")]
 position = Vector2(48, 56)
+collision_layer = 8
+collision_mask = 2
 
 [node name="Bush2" parent="YSort/Bushes" instance=ExtResource("2_q61pu")]
 position = Vector2(96, 128)
@@ -928,7 +929,7 @@ position = Vector2(128, 112)
 position = Vector2(152, 112)
 
 [node name="Grass6" parent="YSort/Grasses" instance=ExtResource("6_1vh7b")]
-position = Vector2(96, 32)
+position = Vector2(96, 24)
 
 [node name="Grass7" parent="YSort/Grasses" instance=ExtResource("6_1vh7b")]
 position = Vector2(64, 16)
