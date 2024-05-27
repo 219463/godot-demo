@@ -946,6 +946,7 @@ position = Vector2(80, 32)
 position = Vector2(64, 32)
 
 [node name="Bats" type="Node2D" parent="YSort"]
+y_sort_enabled = true
 
 [node name="Bat" parent="YSort/Bats" instance=ExtResource("4_cf8xd")]
 position = Vector2(32, 88)

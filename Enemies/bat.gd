@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var stats = $Stats
 
-
+var BatEffect = preload("res://Effects/BatEffect.tscn")
 
 func  _physics_process(delta):
 	velocity = velocity.move_toward(Vector2.ZERO,300*delta)
@@ -15,4 +15,7 @@ func _on_hurtbox_area_entered(area):
 
 
 func _on_stats_dead():
+	var batEffect = BatEffect.instantiate()
+	get_parent().add_child(batEffect)
+	batEffect.global_position = global_position
 	queue_free()
