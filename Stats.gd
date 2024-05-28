@@ -8,4 +8,5 @@ signal dead
 func set_health(value):
 	health = value
 	if health <= 0:
+		#发出dead信号，被生物接收
 		emit_signal("dead")

@@ -12,6 +12,7 @@ var state = MOVE
 #vector 方向向量 包含了x,y的单位量
 var input_vector = Vector2.ZERO
 var roll_vector = Vector2.RIGHT
+var stats = PlayerStats
 
 enum{
 	MOVE,
@@ -23,6 +24,8 @@ enum{
 @onready var animationTree = $AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
 
+func _ready():
+	stats.dead.connect(Callable(self,"queue_free"))
 #delta是上一帧的运行时间
 func _physics_process(delta):
 	match state:
@@ -80,6 +83,7 @@ func roll_animation_finished():
 	
 func attack_animation_finished():
 	state = MOVE
-	
 
-	
+func _on_hurtbox_area_entered(area):
+	stats.health-=1
+	print(stats.health)
