@@ -23,6 +23,7 @@ enum{
 @onready var animationPlayer = $AnimationPlayer
 @onready var animationTree = $AnimationTree
 @onready var animationState = animationTree.get("parameters/playback")
+@onready var hurtbox = $Hurtbox
 
 func _ready():
 	stats.dead.connect(Callable(self,"queue_free"))
@@ -87,3 +88,6 @@ func attack_animation_finished():
 func _on_hurtbox_area_entered(area):
 	stats.health-=1
 	print(stats.health)
+	hurtbox.start_invincibility(5)
+	hurtbox.create_hit_effect()
+	
