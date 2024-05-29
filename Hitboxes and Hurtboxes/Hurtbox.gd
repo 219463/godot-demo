@@ -17,7 +17,8 @@ func set_invincible(value):
 #无敌开始，设定时间，时间结束执行_on_timer_timeout()
 func start_invincibility(duration):
 	self.invincible = true
-	timer = duration
+	timer.wait_time = duration
+	timer.start()
 
 func create_hit_effect():
 	var effect = HitEffect.instantiate()
@@ -31,9 +32,6 @@ func _on_timer_timeout():
 
 
 func _on_invincibility_ended():
-	print("end")
 	set_deferred("monitoring",true)
 func _on_invincibility_started():
-	print("执行start")
-	set_monitoring(false)
-	print(monitoring)
+	set_deferred("monitoring",false)

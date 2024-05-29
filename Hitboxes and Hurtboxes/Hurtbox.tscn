@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://Hitboxes and Hurtboxes/Hurtbox.gd" id="1_rgfra"]
 
 [node name="Hurtbox" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_rgfra")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

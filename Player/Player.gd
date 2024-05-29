@@ -87,7 +87,6 @@ func attack_animation_finished():
 
 func _on_hurtbox_area_entered(area):
 	stats.health-=1
-	print(stats.health)
-	hurtbox.start_invincibility(5)
+	hurtbox.start_invincibility(0.5)
 	hurtbox.create_hit_effect()
 	
